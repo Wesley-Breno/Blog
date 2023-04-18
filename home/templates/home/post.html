@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block 'titulo' %}Blog • {{ posts.titulo_topo }}{% endblock %}</title>
+</head>
+<body>
+    {% block 'post' %}{{ posts.titulo_topo }}{% endblock %}
+    {% block 'conteudo' %}
+        <section align="center">
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags}}" role="alert" style="margin-left:25%; margin-right:25%;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <picture>
+              <source
+                media="(max-width: 750px)"
+                srcset="{{ posts.url_foto }}"
+                width="280px"
+              />
+              <source
+                media="(max-width: 1000px)"
+                srcset="{{ posts.url_foto }}"
+                width="350px"
+              />
+              <img
+                src="{{ posts.url_foto }}"
+                alt="certificado de html e css"
+                width="570px"
+              />
+            </picture>
+            <br>
+            <br>
+            <h2 style="display: inline-block;">{{ posts.titulo }}</h2>
+            <br>
+            <br>
+            <p style="text-align: left; margin-left: 25px; margin-right: 25px;">{{ posts.conteudo_post }}</p>
+            <br>
+            <br>
+            <a href="{% url 'curtir' posts.id %}" class="btn"><img src="https://cdn-icons-png.flaticon.com/512/686/686308.png" width="20px" style="margin-top: -6px;"> Curtir</a>
+
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal{{ noticias_g1|length }}">
+                <img src="https://cdn-icons-png.flaticon.com/512/14/14667.png" width="20px" style="margin-top: -6px;"> Comentar
+            </button>
+
+            <div class="modal fade" id="exampleModal{{ noticias_g1|length }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Adicione seu comentario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form method="POST">
+                      <div class="modal-body">
+                          {% csrf_token %}
+                          <div class="form-floating mb-3">
+                              <input type="text" class="form-control" placeholder="Digite o seu nome" name="nome_usuario">
+                          </div>
+                          <div class="form-floating">
+                              <textarea class="form-control" placeholder="Faça o seu comentario aqui   (●'◡'●)" style="height: 100px" name="comentario_usuario"></textarea>
+                          </div>
+                          <br>
+                          <input type="text" class="form-control" placeholder="URL do seu Linkedin (opcional)" name="linkedin_usuario">
+                          <br>
+                          <input type="text" class="form-control" placeholder="URL do seu Instagram (opcional)" name="instagram_usuario">
+                          <br>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="submit" class="btn btn-success btn-rounded">Enviar comentario</button>
+                      </div>
+                  </form>
+
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="comentarios">
+                {% if comentarios %}
+                <h3>Comentarios</h3>
+                <br>
+                {% for comentario in comentarios %}
+                    <strong>{{ comentario.nome|title }}</strong>
+                    {% if comentario.instagram or comentario.linkedin %}
+                     •
+                    {% if comentario.instagram %}<a href="{{ comentario.instagram }}" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" width="15px" style="margin-top: -5px;"></a>{% endif %}
+                    {% if comentario.linkedin %}<a href="{{ comentario.linkedin }}" target="_blank"><img src="https://cdn.onlinewebfonts.com/svg/img_23537.png" width="15px" style="margin-top: -5px;"></a>{% endif %}<br>
+                    {% endif %}
+                    <p>{{ comentario.comentario }}</p>
+                    <hr>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+        </section>
+    {% endblock %}
+</body>
+</html>

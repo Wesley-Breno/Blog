@@ -1,0 +1,141 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block 'titulo'%}Blog {% endblock %}</title>
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/560/560277.png" type="image/x-icon">
+    <style>
+        body{
+            background-color: white;
+            color: black;
+        }
+        .navbar_home{
+            padding: 5px;
+            color: black;
+            border-radius: 0px 0px 20px 20px;
+            box-shadow: 0px 0px 25px -10px black;
+        }
+
+        .links_navbar a{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .links_navbar div{
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .card{
+            color: black;
+            border: none;
+        }
+
+        .card:hover{
+            width: 284px;
+            padding: 10px 10px 20px 10px;
+            border: 1px solid #BFBFBF;
+            background-color: white;
+            box-shadow: 5px 5px 15px #aaaaaa;
+            z-index: 1;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.1);
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.1);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+        #titulo {
+          margin: 0px;
+          position: relative;
+          color: hsl(0, 0%, 68%);
+          font-weight: bold;
+          font-family: "Anonymous Pro", monospace;
+          letter-spacing: 2px;
+          overflow: hidden;
+          border-right: 2px solid hsl(0, 0%, 80%);
+          white-space: nowrap;
+          animation: typewriter 4s steps(44),
+            blinkTextCursor 500ms infinite;
+        }
+
+        @keyframes typewriter {
+          from {
+            width: 0;
+          }
+          to {
+            width: 313px;
+          }
+        }
+        @keyframes blinkTextCursor {
+          from {
+            border-right-color: hsl(0, 0%, 80%);
+          }
+          to {
+            border-right-color: transparent;
+          }
+        }
+
+        .navbar_home{
+            padding: 10px 0px 10px;
+            text-align: center;
+            position: fixed;
+            inline-size: 100%;
+            z-index: 2;
+            margin-top: -100px;
+        }
+
+        section{
+            margin-top: 100px;
+        }
+
+        .comentarios{
+            text-align: left;
+            margin: 20px;
+            width: 350px;
+        }
+
+        section h2{
+            margin: 10px;
+        }
+
+        .btn{
+            border: solid;
+            border-width: 1px;
+            margin: 10px;
+            margin-top: -3px;
+        }
+
+        .btn:hover{
+            background-color: #DCDCDC;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar_home" style="background-color: #ffffff;">
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" style=" width: 25px; height: 25px;"/>
+            </a>
+              <p id="titulo">{% block 'post' %}Dicas e experiências{% endblock %}</p>
+            <div class="links_navbar">
+            </div>
+          </div>
+        </nav>
+    </div>
+    {% block 'conteudo' %}{% endblock %}
+    <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block 'titulo' %}Blog • Wesley Breno{% endblock %}</title>
+</head>
+<body>
+    {% block 'conteudo' %}
+    <section>
+        {% for post in posts %}
+            <a href="{% url 'post' post.id %}">
+                <div class="card" style="width: 18rem; margin: 50px; display: inline-block;" id="carde">
+                  <img src="{{ post.url_foto }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">{{ post.mini_descricao }}</p>
+                    <hr>
+                    <p class="card-text">
+                        <img src="https://cdn-icons-png.flaticon.com/512/686/686308.png" width="20px"> {{ post.total_curtidas }}
+                        <img src="https://cdn-icons-png.flaticon.com/512/14/14667.png" width="20px"> {{ post.total_comentarios }}
+                    </p>
+                  </div>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+
+    {% endblock %}
+</body>
+</html>
