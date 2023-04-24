@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -42,8 +43,9 @@
             <br>
             <h2 style="display: inline-block;">{{ posts.titulo }}</h2>
             <br>
+            <hr>
             <br>
-            <p style="text-align: left; margin-left: 25px; margin-right: 25px;">{{ posts.conteudo_post }}</p>
+            <div style="text-align: left; margin-left: 50px; margin-right: 50px;">{{ posts.conteudo_post|safe }}</div>
             <br>
             <br>
             <a href="{% url 'curtir' posts.id %}" class="btn"><img src="https://cdn-icons-png.flaticon.com/512/686/686308.png" width="20px" style="margin-top: -6px;"> Curtir</a>

@@ -9,6 +9,7 @@
     <title>{% block 'titulo'%}Blog {% endblock %}</title>
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/560/560277.png" type="image/x-icon">
+    <link href="{% static 'django_summernote/summernote-bs4.css' %}" rel="stylesheet">
     <style>
         body{
             background-color: white;
@@ -137,5 +138,11 @@
     {% block 'conteudo' %}{% endblock %}
     <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 </body>
 </html>
