@@ -5,7 +5,7 @@ class Post(models.Model):
     titulo_topo = models.CharField(max_length=32)
     titulo = models.CharField(max_length=50)
     mini_descricao = models.CharField(max_length=120)
-    conteudo_post = models.CharField(max_length=2000)
+    conteudo_post = models.CharField(max_length=100000)
     url_foto = models.CharField(max_length=50000)
     total_curtidas = models.IntegerField(default=0)
     total_comentarios = models.IntegerField(default=0)
