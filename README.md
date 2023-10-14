@@ -6,31 +6,31 @@
   </a>
 </p>
 
-<p align="center">Clique aqui para acessar o <a href="https://web-production-a8a4.up.railway.app/" target="_blank">site</a>.</p>
+<p align="center">Click here to access the <a href="https://web-production-a8a4.up.railway.app/" target="_blank">website</a>.</p>
 
 <hr>
 
-<h2>Resumo</h2>
+<h2>Resume</h2>
 <p>
-  Este é um projeto onde eu irei publicar sobre minhas experiencias na area da programação e tambem deixar algumas dicas das coisas
-  que eu acho mais importantes a serem observadas em uma carreira como programador. Ao longo do tempo, irei postando novos artigos com 
-  conteudos novos e que possam ser de ajuda consideravel a todos programadores.
+  This is a project where I will publish about my experiences in the programming area and also leave some tips on things
+  which I think are the most important to observe in a career as a programmer. Over time, I will post new articles with
+  new content that can be of considerable help to all programmers.
 </p>
 
-<h2>Sobre o projeto</h2>
+<h2>About the project</h2>
 <p>
-  Este projeto foi desenvolvido utilizando o framework Django em conjunto com a linguagem de programação Python, e também faz uso do 
-  Bootstrap para a criação de uma interface responsiva e agradável para os usuários.
+  This project was developed using the Django framework in conjunction with the Python programming language, and also makes use of
+  Bootstrap for creating a responsive and user-friendly interface.
   
-  O objetivo do projeto é oferecer uma plataforma para que o autor possa compartilhar suas experiências e conhecimentos na área da 
-  programação, incluindo dicas e conselhos úteis para quem está iniciando ou já trabalha na carreira de programador.
+  The objective of the project is to offer a platform for the author to share their experiences and knowledge in the field of
+  programming, including useful tips and advice for those who are starting or already working in a programming career.
   
-  Através do Django e Python, o autor pode criar uma aplicação web robusta e escalável, com um sistema de gerenciamento de conteúdo 
-  intuitivo e eficiente. Isso permite que novos artigos possam ser publicados com facilidade, e que os usuários possam encontrar e 
-  navegar pelos conteúdos de forma simples e organizada.
+  Using Django and Python, the author can create a robust and scalable web application with a content management system
+  intuitive and efficient. This allows new articles to be published easily, and users can find and
+  navigate through content in a simple and organized way.
 </p>
 
-<h2 align="center">Tecnologias usadas</h2>
+<h2 align="center">Technologies used</h2>
 <p align="center">
   <a href='https://www.python.org/' target='_blank'>
     <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' width='40' height='40'>
